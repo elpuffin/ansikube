@@ -1,0 +1,7 @@
+[masters]
+k8-1
+
+[nodes]
+k8s-2
+k8s-3
+k8s-4

@@ -1,7 +1,7 @@
 [masters]
-k8-1
+k8s-1
 
-[nodes]
+[workers]
 k8s-2
 k8s-3
 k8s-4

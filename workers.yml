@@ -1,0 +1,4 @@
+- hosts: workers
+  remote_user: root
+  roles:
+    - common

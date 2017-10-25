@@ -37,13 +37,13 @@ k8s-worker4
 
 ## Authors
 
-* **Raúl Martínez Sánchez** - *Initial Work* nostrum@tuta.io
+* **Raúl Martínez Sánchez** - *Initial Work* - nostrum@tuta.io
 
 ## License
 
 Any Free Software Foundation one
 
-##Acknowledgements
+## Acknowledgements
 
 Partially based on the work done in following article
 

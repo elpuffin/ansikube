@@ -1,6 +1,6 @@
 # ansikube
 
-Ansible playboos to install kubernetes from upstream YUM repos. It uses kubeadm (beta) to do the initial instants and setup.
+Ansible playbooks to install Kubernetes from upstream YUM repos. It uses kubeadm (beta) to do the initial instants and setup.
 
 ## Getting there
 

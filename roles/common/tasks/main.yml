@@ -5,14 +5,10 @@
 
 - name: etcHhosts
   lineinfile:
-    dest: /etc/hosts
+    path: /etc/hosts
     line: "{{ hostvars[item].ansible_ssh_host }} {{ hostvars[item].inventory_hostname}}"
-    state: present
+    backup: yes
   with_items: "{{ groups['all'] }}"
-
-  #template:
-  #  src: hosts.j2
-  #  dest: /etc/hosts
 
 - name: disableSELinux
   selinux:

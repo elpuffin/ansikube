@@ -1,3 +1,0 @@
-{% for host in groups['all'] %}
-   {{ hostvars[inventory_hostname].ansible_default_ipv4.address }} host
-{% endfor %}

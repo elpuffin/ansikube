@@ -1,0 +1,20 @@
+- name: workersFW
+  firewalld:
+    port: "{{ item }}"
+    permanent: true
+    immediate: true
+    state: enabled
+  with_items:
+    - 30000-32767/tcp
+    - 10250/tcp
+    - 10255/tcp
+    - 6783/tcp
+
+- name: getKToken
+  command: cat /tmp/.ktoken
+  register: ktoken
+  delegate_to: k8s-1
+- debug: var=ktoken.stdout
+
+- name: joinKube
+  shell: kubeadm join --token "{{ ktoken.stdout }}" k8s-1:6443

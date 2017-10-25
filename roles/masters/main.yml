@@ -1,2 +1,3 @@
 - name: Setup Master Node
-  import_tasks: runKubeadm
+  import_tasks: mastersFW
+#import_tasks: runKubeadm

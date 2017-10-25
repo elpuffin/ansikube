@@ -1,2 +1,32 @@
+- name: mastersFW
+  firewalld:
+    port: "{{ item }}"
+    permanent: true
+    immediate: true
+    state: enabled
+  with_items:
+    - 6443/tcp
+    - 2379-2380/tcp
+    - 10250/tcp
+    - 10251/tcp
+    - 10252/tcp
+    - 10255/tcp
+
 - name: runKubeadm
   command: kubeadm init
+- name: dotheToken
+  shell: kubeadm token list | grep authentication | awk '{print $1}' > /tmp/.ktoken
+
+- name: mkDir
+  file:
+    state: directory
+    path: /root/.kube
+
+- name: copyConf
+  copy:
+    remote_src: yes
+    src: /etc/kubernetes/admin.conf
+    dest: /root/.kube/config
+
+- name: getWeave
+  shell: kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"

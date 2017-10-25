@@ -1,12 +1,14 @@
-k8s-1 ansible_ssh_host=192.168.124.172
-k8s-2 ansible_ssh_host=192.168.124.249
-k8s-3 ansible_ssh_host=192.168.124.29
-k8s-4 ansible_ssh_host=192.168.124.75
+k8s-master1 ansible_ssh_host=192.168.124.32
+k8s-worker1 ansible_ssh_host=192.168.124.236
+k8s-worker2 ansible_ssh_host=192.168.124.192
+k8s-worker3 ansible_ssh_host=192.168.124.232
+k8s-worker4 ansible_ssh_host=192.168.124.118
 
 [masters]
-k8s-1
+k8s-master1
 
 [workers]
-k8s-2
-k8s-3
-k8s-4
+k8s-worker1
+k8s-worker2
+k8s-worker3
+k8s-worker4

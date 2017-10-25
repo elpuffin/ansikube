@@ -1,7 +1,0 @@
-- name: Setup Node
-  import_tasks: disableSELinux
-  import_tasks: disableSwap
-  import_tasks: fstabSwapoff
-  import_tasks: createRepo
-  import_tasks: installPackages
-  import_tasks: verifySerice

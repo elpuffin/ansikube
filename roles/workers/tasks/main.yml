@@ -13,8 +13,8 @@
 - name: getKToken
   command: cat /tmp/.ktoken
   register: ktoken
-  delegate_to: k8s-1
+  delegate_to: k8s-master1
 - debug: var=ktoken.stdout
 
 - name: joinKube
-  shell: kubeadm join --token "{{ ktoken.stdout }}" k8s-1:6443
+  shell: kubeadm join --token "{{ ktoken.stdout }}" k8s-master1:6443
